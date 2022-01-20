@@ -1,5 +1,12 @@
 # Team02-Auth-Final
+
 Final
+
+
+Deployed link:
+
+https://pokemon-fourm.herokuapp.com/ 
+
 
 Brainstorm:
 1. Car Sales (car models and (Fianance, Sales, user))
