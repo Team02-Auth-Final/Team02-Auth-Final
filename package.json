@@ -1,0 +1,42 @@
+{
+  "name": "auth-api",
+  "version": "1.0.0",
+  "description": "Creating an authenticated API server that utilizes Role Based Access Control (RBAC) using an Access Control List (ACL) for code401 Lab 08.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eriksavage/auth-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eriksavage/auth-api/issues"
+  },
+  "homepage": "https://github.com/eriksavage/auth-api#readme",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^14.2.0",
+    "eslint": "^8.7.0",
+    "express": "^4.17.2",
+    "jest": "^27.4.7",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "sequelize": "^6.13.0",
+    "sequelize-cli": "^6.4.1",
+    "sqlite3": "^5.0.2",
+    "supertest": "^6.2.2"
+  },
+  "devDependencies": {}
+}
