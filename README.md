@@ -19,4 +19,11 @@ Pokemon Forum
  - mod - read write edit - read public and private
  - admin - read write edit delete - read public and private
 
+ 
+## Instillation
 
+## Usage
+
+## Routes
+
+## Features
