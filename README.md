@@ -13,9 +13,10 @@ Brainstorm:
 
 Chosen Idea:
 Pokemon Forum 
- - non-auth viewer - read
- - user - read write
- - mod - read write edit
- - admin - read write edit delete
+- public message (stretch goal)
+ - non-auth viewer - read public
+ - user - read write - read public and private
+ - mod - read write edit - read public and private
+ - admin - read write edit delete - read public and private
 
 
