@@ -20,7 +20,7 @@ describe('Testing signup route:', () => {
       role: 'admin',
     });
     const user = response.body.user;
-
+    console.log('USER TOKEN:', response.body.user.token);
     expect(response.status).toEqual(201);
     expect(user.username).toEqual('admin');
     expect(user.role).toEqual('admin');
@@ -29,32 +29,20 @@ describe('Testing signup route:', () => {
 
   });
 
-  it('should POST to /signup to create a new editor user', async () => {
+  it('should POST to /signup to create a new mod user', async () => {
     const response = await request.post('/signup').send({
-      username: 'editor',
+      username: 'mod',
       password: 'password',
-      role: 'editor',
+      role: 'mod',
     });
     const user = response.body.user;
     expect(response.status).toEqual(201);
-    expect(user.username).toEqual('editor');
-    expect(user.role).toEqual('editor');
+    expect(user.username).toEqual('mod');
+    expect(user.role).toEqual('mod');
     expect(user.capabilities.length).toEqual(3);
     expect(user.capabilities[2]).toEqual('update');
   });
-  it('should POST to /signup to create a new writer user', async () => {
-    const response = await request.post('/signup').send({
-      username: 'writer',
-      password: 'password',
-      role: 'writer',
-    });
-    const user = response.body.user;
-    expect(response.status).toEqual(201);
-    expect(user.username).toEqual('writer');
-    expect(user.role).toEqual('writer');
-    expect(user.capabilities.length).toEqual(2);
-    expect(user.capabilities[1]).toEqual('create');
-  });
+
   it('should POST to /signup to create a new user user', async () => {
     const response = await request.post('/signup').send({
       username: 'user',
@@ -65,7 +53,7 @@ describe('Testing signup route:', () => {
     expect(response.status).toEqual(201);
     expect(user.username).toEqual('user');
     expect(user.role).toEqual('user');
-    expect(user.capabilities.length).toEqual(1);
+    expect(user.capabilities.length).toEqual(2);
     expect(user.capabilities[0]).toEqual('read');
   });
 });
@@ -81,23 +69,13 @@ describe('Testing signin route:', () => {
 
   });
 
-  it('should POST to /signin to signin an editor user', async () => {
+  it('should POST to /signin to signin an mod user', async () => {
     const response = await request.post('/signin').set({
-      authorization: 'Basic ZWRpdG9yOnBhc3N3b3Jk',
+      authorization: 'Basic bW9kOnBhc3N3b3Jk',
     });
 
     expect(response.status).toEqual(200);
-    expect(response.body.user.username).toEqual('editor');
-
-  });
-
-  it('should POST to /signin to signin an writer user', async () => {
-    const response = await request.post('/signin').set({
-      authorization: 'Basic d3JpdGVyOnBhc3N3b3Jk',
-    });
-
-    expect(response.status).toEqual(200);
-    expect(response.body.user.username).toEqual('writer');
+    expect(response.body.user.username).toEqual('mod');
 
   });
 
